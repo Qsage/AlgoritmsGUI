@@ -60,6 +60,6 @@
     )
 
     testButton.bind('<ButtonRelease-1>',        #Считываем нажатие кнопки testButton
-        lambda event: FirstAlg(int(entry.get())))   #Вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
+        lambda event:'' if not len(entry.get()) else  FirstAlg(int(entry.get())))   #Проверяем длинну entry и если она не 0, то вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
 
     testButton.grid(row=0,column=1) #Назначаем положение в первой строке, первом столбце
