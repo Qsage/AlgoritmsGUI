@@ -48,7 +48,7 @@ testButton1 = Button(
 )
 
 testButton1.bind('<ButtonRelease-1>',
-    lambda event: Task1(entry1.get()))
+    lambda event:'' if not len(entry1.get()) else Task1(entry1.get()))
 
 testButton1.grid(row=5,column=1)
 
@@ -63,7 +63,7 @@ testButton2 = Button(
 )
 
 testButton2.bind('<ButtonRelease-1>',
-    lambda event: Task2(int(entryPing.get())))
+    lambda event:'' if not len(entryPing.get()) else Task2(int(entryPing.get())))
 
 testButton2.grid(row=6,column=1)
 
@@ -76,13 +76,14 @@ entry2 = Entry(
     MainFrame
 )
 entry2.grid(row=7, column=2)
+
 entry3 = Entry(
     MainFrame
 )
 entry3.grid(row=8, column=2)
 
 testButton3.bind('<ButtonRelease-1>',
-    lambda event: Task3(int(entry2.get()),int(entry3.get())))
+    lambda event:'' if not (len(entry2.get()) and len(entry3.get()))  else Task3(int(entry2.get()),int(entry3.get())))
 
 testButton3.grid(row=7,column=1)
 
@@ -103,7 +104,7 @@ entry5 = Entry(
 entry5.grid(row=10, column=2)
 
 testButton4.bind('<ButtonRelease-1>',
-    lambda event: Task4(int(entry4.get()),int(entry5.get())))
+    lambda event:'' if not (len(entry4.get()) and len(entry5.get()))  else Task4(int(entry4.get()),int(entry5.get())))
 
 testButton4.grid(row=9,column=1)
 
@@ -122,7 +123,7 @@ entry5 = Entry(
 entry5.grid(row=10, column=2)
 
 testButton4.bind('<ButtonRelease-1>',
-    lambda event: Task4(int(entry4.get()),int(entry5.get())))
+    lambda event:'' if not (len(entry5.get()) and len(entry4.get()))  else Task4(int(entry4.get()),int(entry5.get())))
 
 testButton4.grid(row=9,column=1)
 
@@ -152,7 +153,7 @@ entry9 = Entry(
 entry9.grid(row=4, column=4)
 
 testButton5.bind('<ButtonRelease-1>',
-    lambda event: Task5(float(entry6.get()),float(entry7.get()),float(entry8.get()),float(entry9.get())))
+    lambda event:'' if not (len(entry6.get()) and len(entry7.get())and len(entry8.get())and len(entry9.get()))  else Task5(float(entry6.get()),float(entry7.get()),float(entry8.get()),float(entry9.get())))
 
 testButton5.grid(row=1,column=3)
 
@@ -168,7 +169,7 @@ entry10 = Entry(
 
 entry10.grid(row=5, column=4)
 testButton6.bind('<ButtonRelease-1>',
-    lambda event: Task6(float(entry10.get())))
+    lambda event:'' if not len(entry10.get())else Task6(float(entry10.get())))
 
 testButton6.grid(row=5,column=3)
 

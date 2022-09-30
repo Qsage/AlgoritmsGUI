@@ -21,6 +21,7 @@ def Task2(n):
     listbox.pack()
     while i < n:
 
+        listbox.insert(END,i+1)
 
         listbox.insert(END,'    _~_    ')
         listbox.insert(END,'   (o o)   ')
