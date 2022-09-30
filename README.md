@@ -43,3 +43,23 @@
 # Так же все файлы лежат в папке Source
 # В начале каждого такого файла должнабыть строчка:
     from tkinter import *
+
+
+# Пример создания кнопкки и формы ввода:
+   
+       entry = Entry(       #Создаем форму ввода под название entry и крепим к окну MainFrame(основное окно)
+        MainFrame
+    )
+    entry.grid(row=0, column=2) #Назначаем положение в первой строке, втором столбце
+
+
+    testButton = Button(    #Создаем кнопку под название testButton и крепим к окну MainFrame(основное окно)
+        MainFrame,
+        image=ButtonImage,
+        borderwidth = 0
+    )
+
+    testButton.bind('<ButtonRelease-1>',        #Считываем нажатие кнопки testButton
+        lambda event: FirstAlg(int(entry.get())))   #Вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
+
+    testButton.grid(row=0,column=1) #Назначаем положение в первой строке, первом столбце
