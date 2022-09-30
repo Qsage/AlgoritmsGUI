@@ -47,7 +47,7 @@ from FileName import *
 ```python  
 from tkinter import *
 ```
-# Если в файле есть кнопка, то к нему прописывается:
+# Если в файле есть кнопка, то к нему дополнительно прописывается:
 ```python
 from tkinter import messagebox
 ```
