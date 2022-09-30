@@ -55,8 +55,8 @@
 
     testButton = Button(    #Создаем кнопку под название testButton и крепим к окну MainFrame(основное окно)
         MainFrame,
-        image=ButtonImage,
-        borderwidth = 0
+        image=ButtonImage,      #Назанчаем изображение для кнопки(не используется, в место этого, пишется text="Название кнопки")
+        borderwidth = 0         #Выключаем обводку(не используется)
     )
 
     testButton.bind('<ButtonRelease-1>',        #Считываем нажатие кнопки testButton
