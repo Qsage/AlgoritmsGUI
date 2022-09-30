@@ -84,3 +84,12 @@ def Task6(n):
     text.pack()
     root.iconbitmap("./Content/Image/icon.ico")
     root.mainloop()
+
+
+
+
+
+
+    l1 = math.sqrt((x1-y1)**2+(x2-y2)**2)
+    l2 = math.sqrt((y1-z1)**2+(y2-z2)**2)
+    l3 = math.sqrt((z1-x1)**2+(z2-x2)**2)
