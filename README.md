@@ -3,7 +3,7 @@
 # Пример функции, получающей на вход число и возвращающей список
 ```python
     def name(n):
-      i=0
+      i=0   #Создаем локальную переменную i
       newWindow=Tk() #создание окна для списка
       newWindow.title("Название окна") #Присваивание подписи
       newWindow.iconbitmap("./Content/Image/icon.ico") #Не менять
@@ -25,7 +25,7 @@
 ```python    
     def name(k,n):
 
-      root = Tk() #Желательно использовать название root для окон функции
+      root = Tk() #Желательно использовать названием root для окон функции
       root.title("Алгоритм 4.4")
       text = Text(root, width=25, height=5, wrap=WORD) #Создание текстового блока, в окне root
       if(k<n):
@@ -39,21 +39,25 @@
 ``` 
  
 # Все алгоритмы разбиты на файлы, в соотвествие с номером задания и подключаются в main.py следующим образом:
-```python    from FileName import *```
+```python    
+from FileName import *
+```
 # Так же все файлы лежат в папке Source
 # В начале каждого такого файла должна быть строчка:
-```python   from tkinter import *```
+```python  
+from tkinter import *
+```
 
 
 # Пример создания кнопки и формы ввода:
 ```python   
-       entry = Entry(       #Создаем форму ввода под название entry и крепим к окну MainFrame(основное окно)
+       entry = Entry(       #Создаем форму ввода под названием entry и крепим к окну MainFrame(основное окно)
         MainFrame
     )
     entry.grid(row=0, column=2) #Назначаем положение в первой строке, втором столбце
 
 
-    testButton = Button(    #Создаем кнопку под название testButton и крепим к окну MainFrame(основное окно)
+    testButton = Button(    #Создаем кнопку под названием testButton и крепим к окну MainFrame(основное окно)
         MainFrame,
         image=ButtonImage,      #Назанчаем изображение для кнопки(не используется, в место этого, пишется text="Название кнопки")
         borderwidth = 0         #Выключаем обводку(не используется)
