@@ -39,10 +39,14 @@
 ``` 
  
 # Все алгоритмы разбиты на файлы, в соотвествие с номером задания и подключаются в main.py следующим образом:
-```python    from FileName import *```
+```python    
+        from FileName import *
+```
 # Так же все файлы лежат в папке Source
 # В начале каждого такого файла должна быть строчка:
-```python   from tkinter import *```
+```python  
+        from tkinter import *
+```
 
 
 # Пример создания кнопки и формы ввода:
