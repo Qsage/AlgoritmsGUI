@@ -1,0 +1,40 @@
+# AlgoritmsGUI
+
+#Пимер функции, получающей на вход число и возвращающей список
+
+    def name(n):
+      i=0
+      newWindow=Tk() #создание окна для списка
+      newWindow.title("Название окна") #Присваивание подписи
+      newWindow.iconbitmap("./Content/Image/icon.ico") #Не менять
+
+      listbox=Listbox(newWindow) #Создание списка и закрепление его к окну newWindow
+      listbox.pack() #Запаковка списка
+
+      while i <= n:
+          if (i ** 2 <= n):
+              listbox.insert(END,i**2) #Добавление значения i**2 в конец списка
+              i += 1
+
+          if (i ** 2 > n):
+              break
+      newWindow.mainloop() #Установка окна newWindow как основного
+
+
+#Пимер функции, получающей на вход два числа и возвращающей текст
+    
+    def Task4(k,n):
+
+      root = Tk() #Желательно использовать название root для окон функции
+      root.title("Алгоритм 4.4")
+      text = Text(root, width=25, height=5, wrap=WORD) #Создание текстового блока, в окне root
+      if(k<n):
+          text.insert(1.0, "Первое число, меньше второго") #Запись результата в текстовый блок, на позицию первого символа
+      else:
+          text.insert(1.0, k%n)
+
+      text.pack()
+      root.iconbitmap("./Content/Image/icon.ico")
+      root.mainloop()
+ 
+ 
