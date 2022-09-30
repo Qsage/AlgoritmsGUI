@@ -31,7 +31,7 @@ testButton = Button(
 )
 
 testButton.bind('<ButtonRelease-1>',
-    lambda event: FirstAlg(int(entry.get())))
+    lambda event:'' if not len(entry.get()) else FirstAlg(int(entry.get())))
 
 testButton.grid(row=0,column=1)
 
@@ -171,6 +171,13 @@ testButton6.bind('<ButtonRelease-1>',
     lambda event: Task6(float(entry10.get())))
 
 testButton6.grid(row=5,column=3)
+
+
+
+
+
+
+
 
 
 window.mainloop()
