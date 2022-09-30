@@ -52,6 +52,10 @@ testButton1.bind('<ButtonRelease-1>',
 
 testButton1.grid(row=5,column=1)
 
+entryPing = Entry(
+    MainFrame
+)
+entryPing.grid(row=6, column=2)
 
 testButton2 = Button(
    MainFrame,
@@ -59,7 +63,7 @@ testButton2 = Button(
 )
 
 testButton2.bind('<ButtonRelease-1>',
-    lambda event: Task2())
+    lambda event: Task2(int(entryPing.get())))
 
 testButton2.grid(row=6,column=1)
 
