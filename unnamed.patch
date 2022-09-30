@@ -1,0 +1,95 @@
+Index: Source/Func4.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Func4.py b/Source/Func4.py
+--- a/Source/Func4.py	(revision c467f4e9d86737226ea964ec6ac3581d6c721128)
++++ b/Source/Func4.py	(date 1664552986031)
+@@ -13,18 +13,21 @@
+     root.mainloop()
+ 
+ 
+-def Task2():
++def Task2(n):
++    i=0
+     root = Tk()
+ 
+-    listbox=Listbox(root)
++    listbox = Listbox(root)
+     listbox.pack()
++    while i < n:
++
+ 
+-    listbox.insert(END,'    _~_    ')
+-    listbox.insert(END,'   (o o)   ')
+-    listbox.insert(END,'  /  V  \  ')
+-    listbox.insert(END,' /(  _  )\ ')
+-    listbox.insert(END,'   ^^ ^^   ')
+-
++        listbox.insert(END,'    _~_    ')
++        listbox.insert(END,'   (o o)   ')
++        listbox.insert(END,'  /  V  \  ')
++        listbox.insert(END,' /(  _  )\ ')
++        listbox.insert(END,' ^^ ^^   ')
++        i+=1
+ 
+     root.iconbitmap("./Content/Image/icon.ico")
+     root.mainloop()
+Index: Source/First.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/First.py b/Source/First.py
+--- a/Source/First.py	(revision c467f4e9d86737226ea964ec6ac3581d6c721128)
++++ b/Source/First.py	(date 1664547443646)
+@@ -1,5 +1,5 @@
+ from tkinter import *
+-from tkinter import messagebox
++
+ 
+ def FirstAlg(n):
+     i=0
+Index: Source/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/main.py b/Source/main.py
+--- a/Source/main.py	(revision c467f4e9d86737226ea964ec6ac3581d6c721128)
++++ b/Source/main.py	(date 1664552960622)
+@@ -52,6 +52,10 @@
+ 
+ testButton1.grid(row=5,column=1)
+ 
++entryPing = Entry(
++    MainFrame
++)
++entryPing.grid(row=6, column=2)
+ 
+ testButton2 = Button(
+    MainFrame,
+@@ -59,7 +63,7 @@
+ )
+ 
+ testButton2.bind('<ButtonRelease-1>',
+-    lambda event: Task2())
++    lambda event: Task2(int(entryPing.get())))
+ 
+ testButton2.grid(row=6,column=1)
+ 
+diff --git a/Content/Image/ButtonImage.png b/Content/Image/ButtonImage.png
+deleted file mode 100644
+index effefb18e2c1ac954d86c6023ea3f8eb0bebdf26..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/Content/Image/icon.ico b/Content/Image/icon.ico
+deleted file mode 100644
+index 5256ee7f702a7f431dab644157993611d3cc971f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+

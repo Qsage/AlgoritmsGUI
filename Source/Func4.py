@@ -13,18 +13,21 @@ def Task1(name):
     root.mainloop()
 
 
-def Task2():
+def Task2(n):
+    i=0
     root = Tk()
 
-    listbox=Listbox(root)
+    listbox = Listbox(root)
     listbox.pack()
+    while i < n:
 
-    listbox.insert(END,'    _~_    ')
-    listbox.insert(END,'   (o o)   ')
-    listbox.insert(END,'  /  V  \  ')
-    listbox.insert(END,' /(  _  )\ ')
-    listbox.insert(END,'   ^^ ^^   ')
 
+        listbox.insert(END,'    _~_    ')
+        listbox.insert(END,'   (o o)   ')
+        listbox.insert(END,'  /  V  \  ')
+        listbox.insert(END,' /(  _  )\ ')
+        listbox.insert(END,' ^^ ^^   ')
+        i+=1
 
     root.iconbitmap("./Content/Image/icon.ico")
     root.mainloop()

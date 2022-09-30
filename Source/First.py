@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
+
 
 def FirstAlg(n):
     i=0
