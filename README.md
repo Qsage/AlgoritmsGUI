@@ -1,7 +1,7 @@
 # Документация проекта AlgoritmsGUI
 
 # Пример функции, получающей на вход число и возвращающей список
-
+```python
     def name(n):
       i=0
       newWindow=Tk() #создание окна для списка
@@ -20,9 +20,9 @@
               break
       newWindow.mainloop() #Установка окна newWindow как основного
 
-
+```
 # Пример функции, получающей на вход два числа и возвращающей текст
-    
+```python    
     def name(k,n):
 
       root = Tk() #Желательно использовать название root для окон функции
@@ -36,17 +36,17 @@
       text.pack()
       root.iconbitmap("./Content/Image/icon.ico")
       root.mainloop()
- 
+``` 
  
 # Все алгоритмы разбиты на файлы, в соотвествие с номером задания и подключаются в main.py следующим образом:
-    from FileName import *
+```python    from FileName import *```
 # Так же все файлы лежат в папке Source
 # В начале каждого такого файла должна быть строчка:
-    from tkinter import *
+```python   from tkinter import *```
 
 
 # Пример создания кнопки и формы ввода:
-   
+```python   
        entry = Entry(       #Создаем форму ввода под название entry и крепим к окну MainFrame(основное окно)
         MainFrame
     )
@@ -60,6 +60,9 @@
     )
 
     testButton.bind('<ButtonRelease-1>',        #Считываем нажатие кнопки testButton
-        lambda event:'' if not len(entry.get()) else  FirstAlg(int(entry.get())))   #Проверяем длинну entry и если она не 0, то вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
+        lambda event:'' if not len(entry.get()) else  FirstAlg(int(entry.get())))   #Проверяем длинну entry и если она не 0,
+        #то вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
+      
 
     testButton.grid(row=0,column=1) #Назначаем положение в первой строке, первом столбце
+```
