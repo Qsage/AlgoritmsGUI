@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 rootWindow = Tk()
 
@@ -98,7 +99,7 @@ entryZ2.grid(row=6, column=4)
 
 
 start.bind('<ButtonRelease-1>',
-    lambda event:'' if not (len(entryX1.get())and len(entryX2.get())and len(entryY1.get())and len(entryY2.get())and len(entryZ1.get())and len(entryZ2.get())) else
+    lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryX1.get())and len(entryX2.get())and len(entryY1.get())and len(entryY2.get())and len(entryZ1.get())and len(entryZ2.get())) else
     polygonCreate(float(entryX1.get()),float(entryX2.get()),float(entryY1.get()),float(entryY2.get()),float(entryZ1.get()),float(entryZ2.get())))
 
 def polygonCreate(x1,x2,y1,y2,z1,z2):
@@ -108,7 +109,7 @@ def polygonCreate(x1,x2,y1,y2,z1,z2):
         polyWindow, width=500,height=500
     )
     canvas.pack()
-   # 10 15 15 25 25 10
+
     canvas.create_polygon((x1,x2),(y1,y2),(z1,z2))
     polyWindow.mainloop()
 
