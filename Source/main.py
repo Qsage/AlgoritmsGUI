@@ -2,7 +2,7 @@ from First import *
 from Func4 import *
 from tkinter import *
 from tkinter import messagebox
-
+from TriangleTest import  triangle
 
 window = Tk()
 window.title("Алгоритмы")
@@ -174,10 +174,15 @@ testButton6.bind('<ButtonRelease-1>',
 testButton6.grid(row=5,column=3)
 
 
+triangleButton = Button(
+    MainFrame,
+    text="Типы триугольников"
+)
 
+triangleButton.bind('<ButtonRelease-1>',
+    lambda event:triangle())
 
-
-
+triangleButton.grid(row=7,column=3)
 
 
 
