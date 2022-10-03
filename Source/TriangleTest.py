@@ -55,6 +55,7 @@ textC = Text(
     width=17,
     height=1
 )
+
 textC.grid(row=3,column=3)
 textC.insert(0.0,"Длинна стороны C")
 
