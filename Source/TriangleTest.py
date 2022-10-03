@@ -60,9 +60,9 @@ textC.grid(row=3,column=3)
 textC.insert(0.0,"Длинна стороны C")
 
 start.bind('<ButtonRelease-1>',
-    lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryA.get())and len(entryB.get()) and len(entryB.get())) else polygonCreate(0,0,0,int(entryB.get()),getCoordinateCX(int(entryA.get()),int(entryB.get()),int(entryC.get())),getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get()))))
+    lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryA.get())and len(entryB.get()) and len(entryB.get())) else polygonCreate(10,10,10+int(entryB.get()),10,getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get())),getCoordinateCX(int(entryA.get()),int(entryB.get()),int(entryC.get()))))
 
-start.bind('<ButtonRelease-1>',lambda event:getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get())),'+')
+start.bind('<Button>',lambda event:getTypeTiangle(int(entryA.get()),int(entryB.get()),int(entryC.get())),'+')
 
 start.grid(row=1,column=1)
 
@@ -74,6 +74,7 @@ def getCoordinateCX(a, b, c):
     print(cx)
 
     return cx
+
 
 def getCoordinateCY(a, b, c):
     cosA = (b*b+c*c-a*a)/(2*b*c)
@@ -98,7 +99,21 @@ def polygonCreate(ax,ay,bx,by,cx,cy):
     canvas.pack()
 
 
-    canvas.create_polygon(ax,ay,bx,by,cx,cy)
+    canvas.create_polygon(ax,ay,bx,by,cx,cy, fill='green')
     polyWindow.mainloop()
+
+
+
+def getTypeTiangle(a,b,c):
+
+    if (a + b > c) and (c + b > a) and (a + c > b):
+        if (a * a + b * b == c * c) or (a * a + c * c == b * b) or (c * c + b * b == a * a):
+            messagebox.showinfo(title="Тип треугольника", message="Прямоугольный")
+        elif (a * a + b * b > c * c) or (a * a + c * c > b * b) or (c * c + b * b > a * a):
+            messagebox.showinfo(title="Тип треугольника", message="Остроугольный")
+        elif (a * a + b * b < c * c) or (a * a + c * c < b * b) or (c * c + b * b < a * a):
+            messagebox.showinfo(title="Тип треугольника", message="Тупоугольный")
+    else:
+        messagebox.showerror(title="Тип треугольника", message="Треугольник невозможен")
 
 root.mainloop()
