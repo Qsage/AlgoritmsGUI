@@ -3,6 +3,7 @@ from tkinter import *
 
 from tkinter import messagebox
 
+
 def triangle():
     rootWindow = Tk()
 
