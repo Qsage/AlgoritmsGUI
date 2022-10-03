@@ -47,7 +47,10 @@ from FileName import *
 ```python  
 from tkinter import *
 ```
-
+# Если в файле есть кнопка, то к нему дополнительно прописывается:
+```python
+from tkinter import messagebox
+```
 
 # Пример создания кнопки и формы ввода:
 ```python   
@@ -64,7 +67,7 @@ from tkinter import *
     )
 
     testButton.bind('<ButtonRelease-1>',        #Считываем нажатие кнопки testButton
-        lambda event:'' if not len(entry.get()) else  FirstAlg(int(entry.get())))   #Проверяем длинну entry и если она не 0,
+        lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not len(entry.get()) else  FirstAlg(int(entry.get())))   #Проверяем длинну entry и если она не 0,
         #то вызываем функию FirstAlg(преобразованное в int значение из поля ввода entry)
       
 
