@@ -89,7 +89,6 @@ def getCoordinateCY(a, b, c):
 #print(getCoordinateCX(37,58,70))
 
 
-
 def polygonCreate(ax,ay,bx,by,cx,cy):
     polyWindow = Tk()
 
