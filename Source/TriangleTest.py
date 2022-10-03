@@ -66,6 +66,7 @@ start.bind('<ButtonRelease-1>',lambda event:getCoordinateCY(int(entryA.get()),in
 
 start.grid(row=1,column=1)
 
+
 def getCoordinateCX(a, b, c):
     cosA = (b*b+c*c-a*a)/(2*b*c)
     cx1 = b*cosA
