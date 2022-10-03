@@ -1,3 +1,4 @@
+import math
 from tkinter import *
 
 from tkinter import messagebox
@@ -16,94 +17,77 @@ start = Button(
     root,
     text="Расчитать"
 )
-start.grid(row=1,column=1)
 
-entryX1 = Entry(
+
+entryA = Entry(
     root,width=10
 )
-entryX1.grid(row=1, column=4)
+entryA.grid(row=1, column=4)
 
-textX1 = Text(
+textA = Text(
     root,
-    width=2,
+    width=17,
     height=1
 )
-textX1.grid(row=1,column=3)
-textX1.insert(0.0,"X1")
+textA.grid(row=1,column=3)
+textA.insert(0.0,"Длинна стороны A")
 
-entryX2 = Entry(
+entryB = Entry(
     root,width=10
 )
-entryX2.grid(row=2, column=4)
+entryB.grid(row=2, column=4)
 
-textX2 = Text(
+textB = Text(
     root,
-    width=2,
+    width=17,
     height=1
 )
-textX2.grid(row=2,column=3)
-textX2.insert(0.0,"X2")
+textB.grid(row=2,column=3)
+textB.insert(0.0,"Длинна стороны B")
 
-entryY1 = Entry(
+entryC = Entry(
     root,width=10
 )
-entryY1.grid(row=3, column=4)
+entryC.grid(row=3, column=4)
 
-textY1 = Text(
+textC = Text(
     root,
-    width=2,
+    width=17,
     height=1
 )
-textY1.grid(row=3,column=3)
-textY1.insert(0.0,"Y1")
-
-entryY2 = Entry(
-    root,width=10
-)
-entryY2.grid(row=4, column=4)
-
-textY2 = Text(
-    root,
-    width=2,
-    height=1
-)
-textY2.grid(row=4,column=3)
-textY2.insert(0.0,"Y2")
-
-textZ1 = Text(
-    root,
-    width=2,
-    height=1
-)
-textZ1.grid(row=5,column=3)
-textZ1.insert(0.0,"Z1")
-
-entryZ1 = Entry(
-    root,width=10
-)
-entryZ1.grid(row=5, column=4)
-
-textZ2 = Text(
-    root,
-    width=2,
-    height=1
-)
-textZ2.grid(row=6,column=3)
-textZ2.insert(0.0,"Z2")
-entryZ2 = Entry(
-    root,width=10
-)
-entryZ2.grid(row=6, column=4)
-
-
-
-
+textC.grid(row=3,column=3)
+textC.insert(0.0,"Длинна стороны C")
 
 start.bind('<ButtonRelease-1>',
-    lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryX1.get())and len(entryX2.get())and len(entryY1.get())and len(entryY2.get())and len(entryZ1.get())and len(entryZ2.get())) else
-    polygonCreate(float(entryX1.get()),float(entryX2.get()),float(entryY1.get()),float(entryY2.get()),float(entryZ1.get()),float(entryZ2.get())))
+    lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryA.get())and len(entryB.get()) and len(entryB.get())) else polygonCreate(0,0,0,int(entryB.get()),getCoordinateCX(int(entryA.get()),int(entryB.get()),int(entryC.get())),getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get()))))
 
-def polygonCreate(x1,x2,y1,y2,z1,z2):
+start.bind('<ButtonRelease-1>',lambda event:getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get())),'+')
+
+start.grid(row=1,column=1)
+
+def getCoordinateCX(a, b, c):
+    cosA = (b*b+c*c-a*a)/(2*b*c)
+    cx1 = b*cosA
+    cx =int(round(cx1,1))
+    print(cx)
+
+    return cx
+
+def getCoordinateCY(a, b, c):
+    cosA = (b*b+c*c-a*a)/(2*b*c)
+    cy1 = b * math.sqrt(1-cosA*cosA)
+
+    cy = int(round(cy1,1))
+    print(cy)
+
+    return cy
+
+
+#print(getCoordinateCX(37,58,70))
+
+
+
+def polygonCreate(ax,ay,bx,by,cx,cy):
     polyWindow = Tk()
 
     canvas = Canvas(
@@ -111,7 +95,8 @@ def polygonCreate(x1,x2,y1,y2,z1,z2):
     )
     canvas.pack()
 
-    canvas.create_polygon((x1,x2),(y1,y2),(z1,z2))
+
+    canvas.create_polygon(ax,ay,bx,by,cx,cy)
     polyWindow.mainloop()
 
 root.mainloop()
