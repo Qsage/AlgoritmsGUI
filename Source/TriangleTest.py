@@ -17,7 +17,7 @@ def triangle():
 
     start = Button(
         root,
-        text="Расчитать"
+        text="Рассчитать"
     )
 
 
@@ -73,8 +73,6 @@ def triangle():
         cosA = (b*b+c*c-a*a)/(2*b*c)
         cx1 = b*cosA
         cx =int(round(cx1,1))
-        print(cx)
-
         return cx
 
 
@@ -83,8 +81,6 @@ def triangle():
         cy1 = b * math.sqrt(1-cosA*cosA)
 
         cy = int(round(cy1,1))
-        print(cy)
-
         return cy
 
 
@@ -100,7 +96,7 @@ def triangle():
         canvas.pack()
 
 
-        canvas.create_polygon(ax,ay,bx,by,cx,cy, fill='green')
+        canvas.create_polygon(ay*10,ax*10,bx*10,by*10,cy*10,cx*10, fill='green')
         polyWindow.mainloop()
 
 

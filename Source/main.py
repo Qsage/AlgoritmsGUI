@@ -176,7 +176,7 @@ testButton6.grid(row=5,column=3)
 
 triangleButton = Button(
     MainFrame,
-    text="Типы триугольников"
+    text="Типы треугольников"
 )
 
 triangleButton.bind('<ButtonRelease-1>',
