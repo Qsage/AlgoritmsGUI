@@ -87,7 +87,7 @@ def triangle():
     #print(getCoordinateCX(37,58,70))
 
 
-    def polygonCreate(ax,ay,bx,by,cx,cy):
+    def polygonCreate(ax,ay,bx,by,cx,cy):   #cx,cy,bx,by,ax,ay
         polyWindow = Tk()
 
         canvas = Canvas(
