@@ -62,21 +62,21 @@ def triangle():
     textC.insert(0.0,"Длинна стороны C")
 
     start.bind('<ButtonRelease-1>',
-        lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryA.get())and len(entryB.get()) and len(entryB.get())) else polygonCreate(10,10,10+int(entryB.get()),10,getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get())),getCoordinateCX(int(entryA.get()),int(entryB.get()),int(entryC.get()))))
+        lambda event:messagebox.showerror(title="Ошибка",message="Нет данных") if not (len(entryA.get())and len(entryB.get()) and len(entryB.get())) else polygonCreate(10,10,10+int(entryC.get()),10,getCoordinateCX(int(entryA.get()),int(entryB.get()),int(entryC.get())),getCoordinateCY(int(entryA.get()),int(entryB.get()),int(entryC.get()))))
 
     start.bind('<Button>',lambda event:getTypeTiangle(int(entryA.get()),int(entryB.get()),int(entryC.get())),'+')
 
     start.grid(row=1,column=1)
 
 
-    def getCoordinateCX(a, b, c):
+    def getCoordinateCY(a, b, c):
         cosA = (b*b+c*c-a*a)/(2*b*c)
         cx1 = b*cosA
         cx =int(round(cx1,1))
         return cx
 
 
-    def getCoordinateCY(a, b, c):
+    def getCoordinateCX(a, b, c):
         cosA = (b*b+c*c-a*a)/(2*b*c)
         cy1 = b * math.sqrt(1-cosA*cosA)
 
@@ -84,19 +84,21 @@ def triangle():
         return cy
 
 
-    #print(getCoordinateCX(37,58,70))
-
+    print(getCoordinateCX(30,40,50))
+    print(getCoordinateCY(30, 40, 50))
 
     def polygonCreate(ax,ay,bx,by,cx,cy):
         polyWindow = Tk()
 
         canvas = Canvas(
-            polyWindow, width=500,height=500
+            polyWindow, width=750,height=750
         )
+
         canvas.pack()
 
+        polyWindow.iconbitmap("./Content/Image/icon.ico")
 
-        canvas.create_polygon(ay*10,ax*10,bx*10,by*10,cy*10,cx*10, fill='green')
+        canvas.create_polygon(ax*10,ay*10,bx*10,by*10,cx*10,cy*10, fill='green')
         polyWindow.mainloop()
 
 
